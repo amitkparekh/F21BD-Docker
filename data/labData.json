@@ -1,0 +1,5 @@
+{"first_name": "ken","last_name": "mcleod", "title": "dr", "age": 35, "role": "ra", "id": "kcm"}
+{"first_name": "albert", "last_name": "burger", "title": "dr", "age": 44, "role": "associate prof", "id": "a.g.burger"}
+{"first_name": "jessica", "last_name": "chen-burger", "title": "dr", "role": "assistant prof", "id": "y.j.chenburger"}
+{"first_name": "hind", "last_name": "zantout", "id": "h.zantout"}
+{"first_name": "manni", "last_name": "yake","title": "mr", "age": 37, "role": ["phd", "ra"], "id": "msbd3"}

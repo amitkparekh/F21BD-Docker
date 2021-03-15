@@ -24,6 +24,43 @@ services:
     volumes:
       - neo4j-data:/data
 
+  mongo:
+    image: mongo:latest
+    container_name: f21bd-mongo
+    restart: always
+    command: "--auth"
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+      - ./data:/root/data
+
+  mongo-express:
+    image: mongo-express:latest
+    container_name: f21bd-mongo-express
+    restart: always
+    depends_on:
+      - mongo
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+
+  cassandra:
+    image: cassandra:latest
+    container_name: f21bd-cassandra
+    restart: always
+    volumes:
+      - cassandra-data:/var/lib/cassandra
+    networks:
+      - cassandra-network
+
 volumes:
   jena-fuseki-data:
   neo4j-data:
+  mongo-data:
+  cassandra-data:
+
+networks:
+  cassandra-network:

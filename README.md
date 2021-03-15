@@ -42,3 +42,21 @@ You should be able to access the Web UI from `localhost:3030` as normal.
 The default username is `neo4j` and the default password is `graphdb`.
 
 You should be able to access the Web UI from `localhost:7474` as normal.
+
+### Mongo
+
+1. Open terminal within your local repo
+1. Run `docker-compose up mongo`
+1. TODO: Add other steps here.
+
+### Cassandra
+
+1. Open terminal within your local repo
+1. Run `docker-compose up -d cassandra`
+1. Wait for Cassandra to be ready
+1. Run `bash scripts/connect-to-cassandra-cqlsh.sh` to connect and use CQLSH. If it's not ready, it will error, so just try again.
+
+#### Notes
+
+- Data persists across runs.
+- Run `docker-compose logs f21bd-cassandra` to see the logs
